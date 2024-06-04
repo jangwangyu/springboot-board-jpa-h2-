@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 부트스트랩 CSS 추가 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .custom-form {
+            width: 500px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 custom-form">
+            <form method="post" th:action="@{/board/update}">
+                <input type="hidden" class="form-control" name="idx" id="idx" th:value="${board.idx}">
+                <div class="form-group">
+                    <label for="writer">작성자 :</label>
+                    <input type="text" class="form-control" name="writer" id="writer" th:value="${board.writer}">
+                </div>
+                <div class="form-group">
+                    <label for="title">제목 :</label>
+                    <input type="text" class="form-control" name="title" id="title" th:value="${board.title}">
+                </div>
+                <div class="form-group">
+                    <label for="content">내용 :</label>
+                    <textarea class="form-control" name="content" id="content" rows="10" th:text="${board.content}"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">수정</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- 부트스트랩 JS 추가 -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
